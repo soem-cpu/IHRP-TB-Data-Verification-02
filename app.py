@@ -1127,12 +1127,6 @@ def check_rules(excel_file, output_file="output.xlsx"):
     print(f"Results written to {output_file}")
     return results
 
-if __name__ == "__main__":
-    results = check_rules("TB_TestA.xlsx", "output.xlsx")  # Specify both input and output files
-    for key, df in results.items():
-        print(f"\n--- {key} ---")
-        print(df.head())
-
 
 # ----------------- Streamlit UI -----------------
 st.image("TB image2.jpg", width=200)  # TB logo/image
