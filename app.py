@@ -1,14 +1,14 @@
 import streamlit as st
 import pandas as pd
 import io
-
+import numpy as np
+from datetime import datetime
 st.set_page_config(page_title="Dynamic Rule-Based Data Verification", layout="wide")
 
 # ----------------- Embed rules here -----------------
 # 🔽 Paste your full rule.py content here
-import pandas as pd
-import numpy as np
-from datetime import datetime
+
+
 
 # ==================== Utility Functions ====================
 
