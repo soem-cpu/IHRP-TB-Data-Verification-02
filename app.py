@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime
+import streamlit as st
+import importlib.util
+import io
 
 # ==================== Utility Functions ====================
 
@@ -1129,10 +1132,7 @@ if __name__ == "__main__":
         print(df.head())
 
 
-import streamlit as st
-import pandas as pd
-import importlib.util
-import io
+
 
 st.set_page_config(page_title="Dynamic Rule-Based Data Verification", layout="wide")
 
