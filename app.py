@@ -1,14 +1,11 @@
 import streamlit as st
 import pandas as pd
 import io
-import numpy as np
-from datetime import datetime
+
 st.set_page_config(page_title="Dynamic Rule-Based Data Verification", layout="wide")
 
-# ----------------- Embed rules here -----------------
-# 🔽 Paste your full rule.py content here
-
-
+import numpy as np
+from datetime import datetime
 
 # ==================== Utility Functions ====================
 
@@ -1135,7 +1132,6 @@ if __name__ == "__main__":
     for key, df in results.items():
         print(f"\n--- {key} ---")
         print(df.head())
-# ----------------- End of embedded rules -----------------
 
 
 # ----------------- Streamlit UI -----------------
