@@ -1393,7 +1393,10 @@ def check_rules(excel_file, output_file="output.xlsx"):
     return results
 
 
+excel_output.seek(0)
 
+
+# ----------------- Streamlit UI -----------------
 # ----------------- Streamlit UI -----------------
 st.image("TB image2.jpg", width=200)  # TB logo/image
 st.title("📊 IHRP: TB data verification & indicator calculation")
@@ -1405,11 +1408,12 @@ You can download all results as a single Excel file with multiple sheets.
 """)
 
 # Upload Excel data file only
-data_file = st.file_uploader("📂 Upload Excel file to verify", type=["xlsx", "csv"])
+data_file = st.file_uploader("📂 Upload Excel file to verify", type=["xlsx"])
 
 if data_file:
     try:
         results = check_rules(data_file)
+
         excel_output = io.BytesIO()
         sheet_count = 0
 
@@ -1423,15 +1427,19 @@ if data_file:
                             st.dataframe(v, use_container_width=True)
                         else:
                             st.success(f"No issues found in {k}! ✅")
+
                         v.to_excel(writer, index=False, sheet_name=k[:31])
                         sheet_count += 1
                     else:
                         st.write(v)
 
+        # IMPORTANT: reset pointer
+        excel_output.seek(0)
+
         if sheet_count > 0:
             st.download_button(
                 label="⬇️ Download ALL Results as Excel (multi-sheet)",
-                data=excel_output.getvalue(),
+                data=excel_output,
                 file_name="all_results.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             )
