@@ -1393,9 +1393,6 @@ def check_rules(excel_file, output_file="output.xlsx"):
     return results
 
 
-excel_output.seek(0)
-
-
 # ----------------- Streamlit UI -----------------
 # ----------------- Streamlit UI -----------------
 st.image("TB image2.jpg", width=200)  # TB logo/image
