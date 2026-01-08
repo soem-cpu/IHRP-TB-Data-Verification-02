@@ -1130,7 +1130,7 @@ def check_rules(excel_file, output_file="output.xlsx"):
 
 # ----------------- Streamlit UI -----------------
 st.image("TB image2.jpg", width=200)  # TB logo/image
-st.title("📊 IHRP: TB Data Verification App")
+st.title("📊 IHRP: TB data verification & indicator calculation")
 
 st.markdown("""
 Upload your **Excel file** for TB data verification.  
