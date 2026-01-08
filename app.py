@@ -1,4 +1,9 @@
+import streamlit as st
 import pandas as pd
+import io
+
+st.set_page_config(page_title="Dynamic Rule-Based Data Verification", layout="wide")
+
 import numpy as np
 from datetime import datetime
 
